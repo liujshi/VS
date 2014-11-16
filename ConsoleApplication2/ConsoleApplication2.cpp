@@ -7,7 +7,7 @@
 using namespace std;
 int _tmain(int argc, _TCHAR* argv[])
 {
-
+	cout << "Hello_My_Git!" << endl;
 	return 0;
 
 }
