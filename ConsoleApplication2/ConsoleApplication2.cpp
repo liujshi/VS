@@ -8,6 +8,8 @@ using namespace std;
 int _tmain(int argc, _TCHAR* argv[])
 {
 	cout << "Hello_My_Git!" << endl;
+	//lalallalalala!
+	//wqd
 	return 0;
 
 }
