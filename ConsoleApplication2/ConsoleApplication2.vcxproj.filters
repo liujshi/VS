@@ -27,12 +27,21 @@
     <ClInclude Include="SmartPointer.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="allocator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Alloc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Test.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Alloc.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -82,11 +82,14 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Alloc.h" />
+    <ClInclude Include="allocator.h" />
     <ClInclude Include="SmartPointer.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Alloc.cpp" />
     <ClCompile Include="Test.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>

@@ -4,10 +4,11 @@
 #include "stdafx.h"
 
 #include "SmartPointer.h"
+#include "allocator.h"
 #include <iostream>
 #include <string>
+#include <vector>
 using namespace std;
-using namespace LIUSTL;
 
 class A{
 public:
@@ -20,11 +21,20 @@ public:
 };
 int _tmain(int argc, _TCHAR* argv[])
 {
-	cout << "Hello_My_Git!" << endl;
+	/*cout << "Hello_My_Git!" << endl;
 	A *a = new A;
 	SPtr<A>sp=new SPtr<A>;
 	sp = a;
-	auto sp1(a);
+	auto sp1(a);*/
+
+	int ia[] = { 1, 2, 3, 4, 5 };
+
+	vector<int, LIUSTL::allocator<int> >iv(ia, ia + 5);
+	for (auto e:iv)
+	{
+		cout << e << "\t";
+	}
+	cout << endl;
 
 	return 0;
 
