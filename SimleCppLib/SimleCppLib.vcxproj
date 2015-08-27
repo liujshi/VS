@@ -13,7 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{5EA8E9C9-D462-4399-AF9D-F15D309BC6F9}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ConsoleApplication2</RootNamespace>
+    <RootNamespace>SimpleCppLib</RootNamespace>
     <ProjectName>SimpleCppLib</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -84,9 +84,12 @@
   <ItemGroup>
     <ClInclude Include="Alloc.h" />
     <ClInclude Include="allocator.h" />
+    <ClInclude Include="Construct.h" />
+    <ClInclude Include="Iterator.h" />
     <ClInclude Include="SmartPointer.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TypeTraits.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Alloc.cpp" />
