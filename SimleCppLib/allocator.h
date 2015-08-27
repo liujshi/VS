@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include <climits>
 #include <new>
-namespace LIUSTL
+namespace LSTL
 {
 	/*template<class T>
 	inline T* _allocate(ptrdiff_t size, T*)

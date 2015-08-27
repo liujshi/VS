@@ -1,7 +1,7 @@
 #ifndef SMART_POINTER_H
 #define SMART_POINTER_H
 
-namespace LIUSTL
+namespace LSTL
 {
 	template<typename T>
 	class SPtr{

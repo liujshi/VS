@@ -1,6 +1,6 @@
 #include "Alloc.h"
 
-namespace LIUSTL{
+namespace LSTL{
 	char *__default_alloc_template::start_free = 0;
 	char *__default_alloc_template::end_free = 0;
 	size_t __default_alloc_template::heap_size = 0;
