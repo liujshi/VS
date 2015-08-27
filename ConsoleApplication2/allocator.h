@@ -1,13 +1,13 @@
 #ifndef ALLOCATOR_H
 #define  ALLOCATOR_H
+#include "Alloc.h"
 #include <cstddef>
 #include <cstdlib>
 #include <climits>
-#include <iostream>
 #include <new>
 namespace LIUSTL
 {
-	template<class T>
+	/*template<class T>
 	inline T* _allocate(ptrdiff_t size, T*)
 	{
 		set_new_handler(0);
@@ -32,7 +32,11 @@ namespace LIUSTL
 	template <class T>
 	inline void _destory(T* ptr){
 		ptr->~T();
-	}
+	}*/
+
+
+
+
 	template <class T>
 	class allocator{
 	public:
@@ -44,27 +48,54 @@ namespace LIUSTL
 		typedef size_t size_type;
 		typedef ptrdiff_t difference_type;
 
-		template <class U>
-		struct rebind{
-			typedef allocator<U> other;
-		};
 
-		pointer allocate(size_type n, const void* hint=0)
-		{
-			return _allocate((difference_type)n, (pointer)0);
-		}
-		void deallocate(pointer p, size_type n){ _deallocate(p); }
+		static T *allocate();
+		static T *allocate(size_t n);
+		static void deallocate(T *ptr);
+		static void deallocate(T *ptr, size_t n);
 
-		void construct(pointer p, const T& value){
-			_construt(p, value);
-		}
-		void destory(pointer p){ _destory(p); }
-
-		pointer address(reference x){ return (pointer)&x; }
-
-		const_pointer const_address(const_reference x){
-			return size_type(UINT_MAX / sizeof(T));
-		}
+		static void construct(T *ptr);
+		static void construct(T *ptr, const T& value);
+		static void destroy(T *ptr);
+		static void destroy(T *first, T *last);
 	};
+
+	template<class T>
+	T *allocator<T>::allocate(){
+		return static_cast<T *>(alloc::allocate(sizeof(T)));
+	}
+	template<class T>
+	T *allocator<T>::allocate(size_t n){
+		if (n == 0) return 0;
+		return static_cast<T *>(alloc::allocate(sizeof(T)* n));
+	}
+	template<class T>
+	void allocator<T>::deallocate(T *ptr){
+		alloc::deallocate(static_cast<void *>(ptr), sizeof(T));
+	}
+	template<class T>
+	void allocator<T>::deallocate(T *ptr, size_t n){
+		if (n == 0) return;
+		alloc::deallocate(static_cast<void *>(ptr), sizeof(T)* n);
+	}
+
+	template<class T>
+	void allocator<T>::construct(T *ptr){
+		new(ptr)T();
+	}
+	template<class T>
+	void allocator<T>::construct(T *ptr, const T& value){
+		new(ptr)T(value);
+	}
+	template<class T>
+	void allocator<T>::destroy(T *ptr){
+		ptr->~T();
+	}
+	template<class T>
+	void allocator<T>::destroy(T *first, T *last){
+		for (; first != last; ++first){
+			first->~T();
+		}
+	}
 }
 #endif

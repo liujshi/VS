@@ -26,7 +26,7 @@ namespace LIUSTL{
 
 		static void *allocate(size_t n)
 		{
-			void *reuslt = malloc(n);
+			void *reuslt = oom_malloc(n);
 		}
 
 		static void deallocate(void *p)
@@ -89,6 +89,10 @@ namespace LIUSTL{
 	}
 	typedef __malloc_alloc_template malloc_alloc;
 
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
 	class __default_alloc_template{
 
 	private:
@@ -127,21 +131,7 @@ namespace LIUSTL{
 		static void deallocate(void *ptr, size_t bytes);
 		static void *reallocate(void *ptr, size_t old_sz, size_t new_sz);
 	};
-
+	typedef __default_alloc_template alloc;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #endif
