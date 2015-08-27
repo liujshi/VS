@@ -14,7 +14,7 @@
 
 #include <cstdlib>
 
-namespace LIUSTL{
+namespace LSTL{
 
 	class __malloc_alloc_template{
 	private:
@@ -47,46 +47,7 @@ namespace LIUSTL{
 		}
 	};
 
-	void(*__malloc_alloc_template::__malloc_alloc_oom_handler)() = 0;
-
-	void * __malloc_alloc_template::oom_malloc(size_t n)
-	{
-		void(*my_malloc_handler)();
-		void *result;
-
-		for (;;)
-		{
-			my_malloc_handler = __malloc_alloc_oom_handler;
-			if (0 == my_malloc_handler)
-			{
-				__THROW_BAD_ALLOC;
-			}
-			(*my_malloc_handler)();
-			result = malloc(n);
-			if (result) return(result);
-		}
-	}
 	
-	void *__malloc_alloc_template::oom_realloc(void *p, size_t n)
-	{
-		void(*my_malloc_handler)();
-		void *result;
-
-		for (;;)
-		{
-			my_malloc_handler = __malloc_alloc_oom_handler;
-			if (0 == my_malloc_handler)
-			{
-				__THROW_BAD_ALLOC;
-			}
-			(*my_malloc_handler)();
-			result = realloc(p, n);
-			if (result)
-			{
-				return (result);
-			}
-		}
-	}
 	typedef __malloc_alloc_template malloc_alloc;
 
 

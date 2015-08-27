@@ -1,9 +1,7 @@
 #ifndef ALLOCATOR_H
 #define  ALLOCATOR_H
 #include "Alloc.h"
-#include <cstddef>
-#include <cstdlib>
-#include <climits>
+
 #include <new>
 namespace LSTL
 {

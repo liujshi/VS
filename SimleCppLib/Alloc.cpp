@@ -1,6 +1,52 @@
 #include "Alloc.h"
 
 namespace LSTL{
+
+	void(*malloc_alloc::__malloc_alloc_oom_handler)() = 0;
+
+	void * malloc_alloc::oom_malloc(size_t n)
+	{
+		void(*my_malloc_handler)();
+		void *result;
+
+		for (;;)
+		{
+			my_malloc_handler = __malloc_alloc_oom_handler;
+			if (0 == my_malloc_handler)
+			{
+				__THROW_BAD_ALLOC;
+			}
+			(*my_malloc_handler)();
+			result = malloc(n);
+			if (result) return(result);
+		}
+	}
+
+	void *malloc_alloc::oom_realloc(void *p, size_t n)
+	{
+		void(*my_malloc_handler)();
+		void *result;
+
+		for (;;)
+		{
+			my_malloc_handler = __malloc_alloc_oom_handler;
+			if (0 == my_malloc_handler)
+			{
+				__THROW_BAD_ALLOC;
+			}
+			(*my_malloc_handler)();
+			result = realloc(p, n);
+			if (result)
+			{
+				return (result);
+			}
+		}
+	}
+	////////////////////////////////////////////////////////////////////////
+
+
+
+
 	char *__default_alloc_template::start_free = 0;
 	char *__default_alloc_template::end_free = 0;
 	size_t __default_alloc_template::heap_size = 0;

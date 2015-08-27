@@ -29,7 +29,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	int ia[] = { 1, 2, 3, 4, 5 };
 
-	vector<int, LIUSTL::allocator<int> >iv(ia, ia + 5);
+	vector<int, LSTL::allocator<int> >iv(ia, ia + 5);
 	for (auto e:iv)
 	{
 		cout << e << "\t";
