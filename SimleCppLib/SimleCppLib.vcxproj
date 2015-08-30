@@ -82,6 +82,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Algorithm.h" />
     <ClInclude Include="Alloc.h" />
     <ClInclude Include="allocator.h" />
     <ClInclude Include="Construct.h" />
@@ -90,6 +91,8 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TypeTraits.h" />
+    <ClInclude Include="uninitialized.h" />
+    <ClInclude Include="vector.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Alloc.cpp" />
