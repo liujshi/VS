@@ -8,6 +8,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "Testtools.h"
 using namespace std;
 
 class A{
@@ -35,7 +36,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		cout << e << "\t";
 	}
 	cout << endl;
-
+	cout << LSTL::Profiler::ProfilerInstance::memory() << endl;
 	return 0;
 
 }

@@ -45,6 +45,9 @@
     <ClInclude Include="Algorithm.h">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="Testtools.h">
+      <Filter>Test</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
