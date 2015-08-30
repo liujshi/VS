@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Alloc.cpp">
+      <Filter>Headers</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>VScode</Filter>
+    </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>Test</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Alloc.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="allocator.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Construct.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Iterator.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeTraits.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>VScode</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>VScode</Filter>
+    </ClInclude>
+    <ClInclude Include="SmartPointer.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="vector.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="uninitialized.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Algorithm.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{7ad5bb92-f082-4e47-befd-147c630c8606}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VScode">
+      <UniqueIdentifier>{bfbd258c-fb77-4874-ab13-9617f2f1ab2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Test">
+      <UniqueIdentifier>{9baa9cb5-93d0-4fa2-b315-8a4cb50bc505}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
