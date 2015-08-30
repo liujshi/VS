@@ -4,7 +4,7 @@
 
 STL:
 
-	Done：smartpointer, alloc, allocator, type_traits, iterator
+	Done：smartpointer, alloc, allocator, type_traits, iterator, vector
 
 	TODO:
 
