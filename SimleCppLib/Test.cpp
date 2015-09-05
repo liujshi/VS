@@ -2,12 +2,11 @@
 //
 
 #include "stdafx.h"
-
+#include "Algorithm.h"
 #include "SmartPointer.h"
 #include "allocator.h"
 #include <iostream>
-#include <string>
-#include <vector>
+#include "vector.h"
 #include "Testtools.h"
 using namespace std;
 
@@ -29,9 +28,18 @@ int _tmain(int argc, _TCHAR* argv[])
 	auto sp1(a);*/
 
 	int ia[] = { 1, 2, 3, 4, 5 };
+	int i3[] = { 0, 0, 0, 0, 0 };
+	LSTL::vector<int, LSTL::allocator<int> >iv(ia, ia + 5);
+	LSTL::vector<int> ii(i3, i3 + 5);
+	for (auto e:ii)
+	{
+		cout << e << "\t";
+	}
 
-	vector<int, LSTL::allocator<int> >iv(ia, ia + 5);
-	for (auto e:iv)
+	cout << endl;
+
+	LSTL::copy_backward(iv.begin(), iv.end(), ii.end());
+	for (auto e : ii)
 	{
 		cout << e << "\t";
 	}

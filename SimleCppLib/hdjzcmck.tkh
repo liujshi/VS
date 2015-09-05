@@ -288,10 +288,7 @@ namespace LSTL{
 					}
 					else
 					{
-						finish = start + spaceneed;
-						uninitialized_copy(position, old_finish, finish);
-						finish += (old_finish - position);
-						uninitialized_copy(first, last, position);
+
 					}
 				}
 			}
